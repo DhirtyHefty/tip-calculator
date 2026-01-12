@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*PRIMARY COLOR*/
+    --GREEN-400: hsl(172, 67%, 45%);
+
+    /*NEUTRAL COLORS*/
+    --Green-900: hsl(183, 100%, 15%);
+    --Grey-500: hsl(186, 14%, 43%);
+    --Grey-400: hsl(184, 14%, 56%);
+    --Grey-200: hsl(185, 41%, 84%);
+    --Grey-50: hsl(189, 47%, 97%);
+    --White: hsl(0, 100%, 100%);
+
+
+    /*FONT*/
+    /*font size*/
+    --FS : 24px;
+
+    /*font style*/
+    --FF: "Space Mono", monospace;
+    --FW: 700
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--Grey-400);
+    font-family: var(--FF);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+
+.container{
+    background-color: var(--White);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 450px;
+    width: 100%; 
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+}
+
+.input-section{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label{
+    color: var(--Grey-500);
+    font-size: 16px;
+    font-weight: var(--FW);
+    padding: 1rem;
+}
+
+
+
+.input-field{
+    padding: 8px 15px;
+    background-color: var(--Grey-200);
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 24px;
+    font-family: var(--FF);
+    font-weight: var(--FW);
+}
+
+.input-wrapper{
+    position: relative;
+}
+
+.input-icon{
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tip-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.tip-btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--Green-900);
+    color: var(--Grey-500);
+    font-size: 16px;
+    font-family: var(--FF);
+    max-width: 200px;
+    width: 100% ;
+}
+
+.custom-input{
+    font-family: var(--FF);
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    font-weight: var(--FW);
+    max-width: 200px;
+    width: 100% ;
+}
+
+.result-section{
+    background-color: var(--Green-900);
+    padding: 40px;
+    border-radius: 20px;
+    
+}
+
+.result-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.result-label-main{
+    color: var(--White);
+}
+
+.result-label-sub{
+    color: var(--Grey-400);
+}
+
+.result-amount{
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--GREEN-400);
+}
+
+.reset-btn{
+    background-color: var(--GREEN-400);
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: var(--Green-900);
+}
