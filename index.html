@@ -24,11 +24,11 @@
             <div class="form-group">
                 <label class="label">Select Tip %</label>
                 <div class="tip-grid">
-                    <button class="tip-btn" data-tip="5%">5%</button>
-                    <button class="tip-btn" data-tip="10%">10%</button>
-                    <button class="tip-btn" data-tip="15%">15%</button>
-                    <button class="tip-btn" data-tip="25%">25%</button>
-                    <button class="tip-btn" data-tip="50%">50%</button>
+                    <button class="tip-btn" data-tip="5">5%</button>
+                    <button class="tip-btn" data-tip="10">10%</button>
+                    <button class="tip-btn active" data-tip="15">15%</button>
+                    <button class="tip-btn" data-tip="25">25%</button>
+                    <button class="tip-btn" data-tip="50">50%</button>
                     <input type="number" class="custom-input" id="customTip" placeholder="Custom">
                 </div>
             </div>
@@ -56,12 +56,9 @@
                     <h4 class="result-label-main">Total</h4>
                     <p class="result-label-sub">/ Person</p>
                 </div>
-                
-                    <p class="result-amount" id="totalPerPerson">$32.79</p>
-                
-            </div>  
-
-            <button class="reset-btn">RESET</button>
+                 <p class="result-amount" id="totalPerPerson">$32.79</p>            
+            </div>            
+            <button class="reset-btn" id="resetBtn">RESET</button>
         </section>
     </main>
     <script src="script.js"></script>
