@@ -214,6 +214,24 @@ header{
     background-color: hsl(172, 67%, 65%); 
 }
 
+.label-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-message{
+    display: none;
+    font-size: 12px;
+    color: orange;
+}
+
+.error-message.show{
+    display: block;
+}
+
+
+
 @media (min-width: 1024px) {
     .container{
         grid-template-columns: 1fr 1fr; 

@@ -5,6 +5,7 @@ const numPeopleInput = document.getElementById('numPeople');
 const tipPerPersonDisplay = document.getElementById('tipPerPerson');
 const totalPerPersonDisplay = document.getElementById('totalPerPerson');
 const resetButton = document.querySelector('.reset-btn');
+const errorMessage = document.getElementById('errorMessage');
 
 //creating a variable to store the selected tip percentage
 let selectedTip = 15;
@@ -12,8 +13,25 @@ let selectedTip = 15;
 function calculateTip(){
     //get bill from input and convert it to a number 
     const bill = parseFloat(billAmount.value) || 0;
-    const people = parseInt(numPeopleInput.value) || 1;
+    let people = parseInt(numPeopleInput.value);
     const tipPercent = selectedTip;
+
+    //checking if number of people is zero, empty, or negative
+    if(people <= 0 || numPeopleInput.value === '' || isNaN(people)){
+        //show error message
+        errorMessage.classList.add('show');
+        numPeopleInput.classList.add('error');
+        
+        //DON'T calculate - just show $0.00
+        tipPerPersonDisplay.textContent = `$0.00`;
+        totalPerPersonDisplay.textContent = `$0.00`;
+        
+        return; // Exit the function - don't calculate anything
+    } else {
+        //hide error message
+        errorMessage.classList.remove('show');
+        numPeopleInput.classList.remove('error');
+    }
 
     //calculate the total tip amount
     const tipAmount = (bill * tipPercent) / 100;
@@ -82,6 +100,10 @@ resetButton.addEventListener('click', () => {
 
     //remove active state from all buttons
     tipButtons.forEach(b => b.classList.remove('active'));
+    
+    //remove error state if showing
+    errorMessage.classList.remove('show');
+    numPeopleInput.classList.remove('error');
 
     //reset tip to zero
     selectedTip = 0;
